@@ -1,8 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+//به عنوان یک پایگاه داده ساده 
+//SQLite
+//را انتخاب کردم
+//لازم است کتابخانه 
+//System.Data.SQLite
+//به عنوان رفرنس اضافه شود
+//روش بهتر استفاده از ابزار ناگت از منوی تولز است
 
 namespace Simple_Library
 {
@@ -14,9 +19,18 @@ namespace Simple_Library
         [STAThread]
         static void Main()
         {
+
+
+
+
+
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
         }
     }
 }

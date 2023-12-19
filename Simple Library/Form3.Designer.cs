@@ -32,6 +32,7 @@
             this.id_to_remove_box = new System.Windows.Forms.TextBox();
             this.ok_to_remove = new System.Windows.Forms.Button();
             this.cancel_remove = new System.Windows.Forms.Button();
+            this.remove_status = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // delete_label
@@ -69,10 +70,21 @@
             this.cancel_remove.Location = new System.Drawing.Point(227, 112);
             this.cancel_remove.Name = "cancel_remove";
             this.cancel_remove.Size = new System.Drawing.Size(75, 23);
-            this.cancel_remove.TabIndex = 2;
+            this.cancel_remove.TabIndex = 3;
             this.cancel_remove.Text = "Cancel";
             this.cancel_remove.UseVisualStyleBackColor = true;
             this.cancel_remove.Click += new System.EventHandler(this.cancel_remove_Click);
+            // 
+            // remove_status
+            // 
+            this.remove_status.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.remove_status.AutoSize = true;
+            this.remove_status.Location = new System.Drawing.Point(161, 88);
+            this.remove_status.Name = "remove_status";
+            this.remove_status.Size = new System.Drawing.Size(0, 13);
+            this.remove_status.TabIndex = 0;
             // 
             // delete_dialog
             // 
@@ -80,6 +92,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.ClientSize = new System.Drawing.Size(341, 147);
+            this.Controls.Add(this.remove_status);
             this.Controls.Add(this.cancel_remove);
             this.Controls.Add(this.ok_to_remove);
             this.Controls.Add(this.id_to_remove_box);
@@ -99,5 +112,6 @@
         private System.Windows.Forms.TextBox id_to_remove_box;
         private System.Windows.Forms.Button ok_to_remove;
         private System.Windows.Forms.Button cancel_remove;
+        private System.Windows.Forms.Label remove_status;
     }
 }

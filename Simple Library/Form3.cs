@@ -26,65 +26,36 @@ namespace Simple_Library
 
         private void ok_to_remove_Click(object sender, EventArgs e)
         {
-            /*
+            
+            DeleteEntryInTable("books", "id", id_to_remove_box.Text.ToString());
+
+
+        }
+
+        private void DeleteEntryInTable(string tableName, string pKeyName, string pKeyValue)
+        {
             //آغاز ارتباط با پایگاه داده
             string connectionString = "Data Source=simlib.db;Version=3;"; //تعیین نام فایل پایگاه داده و نسخه آن
             SQLiteConnection connection = new SQLiteConnection(connectionString);
-
-            //ایجاد فایل پایگاه داده و اضافه کردن کاربر
-
-
-            //دستورات ایجاد جدول و درج اطلاعات در جدول
-            string createTableSql = "CREATE TABLE IF NOT EXISTS books (id INTEGER PRIMARY KEY, bookname TEXT, author TEXT, publisher TEXT, isbn TEXT, pubyear INT, UNIQUE(isbn))";
-            //string insertSql = "INSERT OR IGNORE INTO books (bookname, author, publisher, isbn, pubyear) VALUES (@bookname, @author, @publisher, @isbn, @pubyear) ";
-
-            //ارسال دستور ایجاد جدول به پایگاه داده
-            SQLiteCommand createTableCommand = new SQLiteCommand(createTableSql, connection);
-            //ارسال دستور افزودن اطلاعات به پایگاه داده
-            //SQLiteCommand insertCommand = new SQLiteCommand(insertSql, connection);
-
-
-
+            connection.Open();
+            SQLiteCommand cmd_1 = connection.CreateCommand();
+            cmd_1.CommandText = $"DELETE FROM {tableName} WHERE {pKeyName} = @pKeyValue";
+            cmd_1.Parameters.AddWithValue("@pKeyValue", pKeyValue);
+            System.Diagnostics.Debug.WriteLine(cmd_1.CommandText);
             try
             {
-
-                //آغاز ارتباط 
-                connection.Open();
-                //اجرای دستور ایجاد جدول
-                createTableCommand.ExecuteNonQuery();
-                SQLiteCommand removerowCommand = new SQLiteCommand("DELETE FROM books WHERE id='" + id_to_remove_box.ToString() + "'", connection);
-               
-              
-                }
-                this.book_list_table.EndUpdate();
-
-                connection.Close();
-
-
-
-
-
-
+                int rows = cmd_1.ExecuteNonQuery();
+                remove_status.Text = rows.ToString() + " Rows Deleted!";
+                cancel_remove.Text = "Close";
             }
             catch (Exception ex)
-
             {
-                mainlib_status.Text = $"Error: {ex.Message}";
+                remove_status.Text = ex.ToString();
             }
-            finally
-            {
-
-                connection.Close();
-
-
-
-            }
+            connection.Close();
         }
-    
-   
 
-*/
-        }
-        }
 
     }
+
+}

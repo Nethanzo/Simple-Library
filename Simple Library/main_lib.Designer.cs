@@ -88,13 +88,15 @@
             // 
             // crawlToolStripMenuItem
             // 
-            this.crawlToolStripMenuItem.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.crawlToolStripMenuItem.Enabled = false;
+            this.crawlToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.crawlToolStripMenuItem.Name = "crawlToolStripMenuItem";
-            this.crawlToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.crawlToolStripMenuItem.Text = "Crawl";
+            this.crawlToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crawlToolStripMenuItem.Text = "Online";
             // 
             // editToolStripMenuItem
             // 
+            this.editToolStripMenuItem.Enabled = false;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";

@@ -81,7 +81,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.remove_status.AutoSize = true;
-            this.remove_status.Location = new System.Drawing.Point(161, 88);
+            this.remove_status.Location = new System.Drawing.Point(123, 87);
             this.remove_status.Name = "remove_status";
             this.remove_status.Size = new System.Drawing.Size(0, 13);
             this.remove_status.TabIndex = 0;

@@ -45,7 +45,7 @@ namespace Simple_Library
             try
             {
                 int rows = cmd_1.ExecuteNonQuery();
-                remove_status.Text = rows.ToString() + " Rows Deleted!";
+                remove_status.Text = rows.ToString() + " Row Deleted!";
                 cancel_remove.Text = "Close";
             }
             catch (Exception ex)
